@@ -17,3 +17,21 @@ Current examples:
 - Open air
   - Wifi (e.g. 54Mbps 802.11g and ~0.5 GBps 802.11ac). 
   - 5G.
+
+Security
+--------
+
+### Symmetric encryption
+
+Symmetric encryption is used to password-protect files (such as private keys). 
+
+### Asymmetric encryption
+
+Ed25519 appears to be the current recommended practice (uses elliptic curve). The key is quite short (only 256 bits for the public key).
+
+If instead using RSA, should use 4096 bits.
+
+### SSH keys
+
+### Certificates
+
