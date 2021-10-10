@@ -23,14 +23,18 @@ A repeater is generally used to transfer a physical signal between consecutive p
 MAC addressing
 --------------
 
-Network segments can be bridged at a logical level (only retransmitting well-formed dataframes/packets). This is performed in star topologies by a switch. Each node is expected to have a unique MAC address. The switch learns which MAC addresses are connected to each interface, to forward packets to the correct segment. A switch may associate multiple MAC addresses to a single interface, for example if it connects to another switch (or similarly, to a host with multiple virtual machines). 
+Network links can be bridged at a logical level, only retransmitting well-formed dataframes. This is performed in star topologies by a switch.
 
-High speed switches are likely to use specialised circuitry. (100Gbps implies receiving 64bits from each port in the period that a conventional 64-bit CPU executes 1-2 instructions.)
+Each node is expected to have a unique MAC (media access control) address. The switch tries to remember which MAC addresses are connected to each interface, to forward dataframes to the correct link. (Otherwise the dataframe will need be broadcast over all interfaces.) A switch may associate multiple MAC addresses to a single interface, for example if it connects to another switch (or similarly, to a host with multiple virtual machines). 
+
+High speed switches are likely to use specialised circuitry. (100Gbps implies receiving 64bits from each port in the period that a conventional 64-bit CPU core executes 1-2 instructions.)
 
 IP routing
 ----------
 
-32-bit addresses. Hierarchical network addresses.
+The internet protocol enables separate switched networks to be connected in a hierarchical manner. IPv4 involves 32bit addresses which are divided into a prefix that is particular to the local switched network, and an extension that is peculiar to individual hosts within that subnet. Each host must be configured with its address, the prefix length (nowadays expressed with CIDR notation instead of netmask), and the address of a default gateway (a host on the local network that can relay message packets for addresses outside of the subnet). 
+
+The prefix length permits recognising whether another IP address is on the same subnet. This determines whether a packet should be directed to the MAC address of the gateway or of the recipient directly. A sender will check its own cache for the MAC address associated with a given local IP address, and otherwise needs to broadcast (using Address Resolution Protocol) to find which MAC address answers for that IP address. (ARP can be vulnerable to an interception attack, where a third MAC address self-identifies to a target as the gateway IP, and to the actual gateway as that host IP.)
 
 
 Security
