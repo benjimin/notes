@@ -40,6 +40,22 @@ The prefix length permits recognising whether another IP address is on the same 
 Security
 --------
 
+### Hashing
+
+Git uses SHA1, and is planning to migrate to SHA256. (Collision attacks have been demonstrated for SHA1, likewise MD5.)
+
+Ubuntu Linux presently defaults to SHA512 for system passwords.
+
+### Symmetric encryption
+
+Symmetric encryption is used to password-protect files (such as private keys). 
+
+### Asymmetric encryption
+
+Ed25519 appears to be the current recommended practice (uses elliptic curve). The key is quite short (only 256 bits for the public key).
+
+If instead using RSA, should use 4096 bits.
+
 ### TLS (formerly SSL)
 
 Transport Layer Security (successor of Secure Sockets Layer).
@@ -52,15 +68,6 @@ Certificates
 
 ECH (Encrypted Client Hello) and SNI (Server Name Indication)
 
-### Symmetric encryption
-
-Symmetric encryption is used to password-protect files (such as private keys). 
-
-### Asymmetric encryption
-
-Ed25519 appears to be the current recommended practice (uses elliptic curve). The key is quite short (only 256 bits for the public key).
-
-If instead using RSA, should use 4096 bits.
 
 ### SSH keys
 
