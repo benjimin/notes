@@ -73,3 +73,7 @@ ECH (Encrypted Client Hello) and SNI (Server Name Indication)
 
 ### Certificates
 
+### Authentication
+
+The JSON Web Token is a standard for encoding a cryptographically verified claim. It has three parts: a header (a JSON structure that confirms it is a JWT and specifies the crypto algorithm), the payload (a JSON structure of claims, typically including: issuer, subject, audience, and expiry), and a signature (a hash of the rest of the token, generated using either a shared secret or asymmetric key pair). The parts are base64 url encoded, and concatenated (with periods as separators). 
+
