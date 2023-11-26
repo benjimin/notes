@@ -5,7 +5,7 @@ Internet
 Physical layer
 --------------
 
-All computer networking relies utilises on electromagnetic wave propagation. Some methods require collision-detection (such as old coaxial cable 10base2 10Mbps ethernet, and wireless methods).
+All computer networking is founded on electromagnetic wave propagation. Some methods necessitate collision-detection (such as old coaxial cable 10base2 10Mbps ethernet, and wireless methods).
 
 Current examples:
 - Electrical conductor (i.e. copper)
