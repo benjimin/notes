@@ -36,6 +36,11 @@ The internet protocol enables separate switched networks to be connected in a hi
 
 The prefix length permits recognising whether another IP address is on the same subnet. This determines whether a packet should be directed to the MAC address of the gateway or of the recipient directly. A sender will check its own cache for the MAC address associated with a given local IP address, and otherwise needs to broadcast (using Address Resolution Protocol) to find which MAC address answers for that IP address. (ARP can be vulnerable to an interception attack, where a third MAC address self-identifies to a target as the gateway IP, and to the actual gateway as that host IP.)
 
+TCP
+---
+
+The most common protocols used over IP are either UDP or TCP. Each of these has its own notion of numerical ports, to address different services on the same host. UDP is a lightweight wrapper of IP. TCP is a more complicated protocol, that achieves ordering and reliability.
+
 
 Security
 --------
@@ -56,22 +61,26 @@ Ed25519 appears to be the current recommended practice (uses elliptic curve). Th
 
 If instead using RSA, should use 4096 bits.
 
+### Certificates
+
+Normally expressed in a canonical format.
+
+Typically, the entire trust chain is sent at once, so that the client can immediately verify the claims.
+
 ### TLS (formerly SSL)
 
-Transport Layer Security (successor of Secure Sockets Layer).
+Transport Layer Security 1.3 (successor of Secure Sockets Layer).
 
 RFC8446
 
 The client sends a random nonce. Hash pairs, key shares, key (by label)..
-
-Certificates
 
 ECH (Encrypted Client Hello) and SNI (Server Name Indication)
 
 
 ### SSH keys
 
-### Certificates
+
 
 ### Authentication
 
