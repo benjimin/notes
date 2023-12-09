@@ -39,7 +39,7 @@ The prefix length permits recognising whether another IP address is on the same 
 TCP
 ---
 
-The most common protocols used over IP are either UDP or TCP. Each of these has its own notion of numerical ports, to address different services on the same host. UDP is a lightweight wrapper of IP. TCP is a more complicated protocol, that achieves ordering and reliability.
+The most common protocols used over IP are either UDP or TCP. Each of these has its own notion of numerical ports, to separately address multiple services on the same host. The user datagram protocol is just a lightweight wrapper for IP datagrams. Transmission control protocol is more sophisticated, establishing connections with reliable, ordered data streams (through handshaking, retransmissions, error detection, etc).
 
 
 Security
