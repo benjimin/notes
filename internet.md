@@ -36,9 +36,6 @@ The internet protocol enables separate switched networks to be connected in a hi
 
 The prefix length permits recognising whether another IP address is on the same subnet. This determines whether a packet should be directed to the MAC address of the gateway or of the recipient directly. A sender will check its own cache for the MAC address associated with a given local IP address, and otherwise needs to broadcast (using Address Resolution Protocol) to find which MAC address answers for that IP address. (ARP can be vulnerable to an interception attack, where a third MAC address self-identifies to a target as the gateway IP, and to the actual gateway as that host IP.)
 
-TCP
----
-
 The most common protocols used over IP are either UDP or TCP. Each of these has its own notion of numerical ports, to separately address multiple services on the same host. The user datagram protocol is just a lightweight wrapper for IP datagrams. Transmission control protocol is more sophisticated, establishing connections with reliable, ordered data streams (through handshaking, retransmissions, error detection, etc).
 
 
@@ -88,4 +85,4 @@ The JSON Web Token is a standard for encoding a cryptographically verified claim
 
 OAuth2 is an authorisation standard. The common flow (for applications that have a backend servers) is that the application server redirects the client browser to the authorisation service. That service authenticates the user (say by password) and redirects the client back to the application server along with an authorisation code. The application server then contacts the authentication service directly, exchanging the code and application key for tokens (to identify the user and to grant the application server access to resources on the user's behalf). 
 
-OpenID Connect is the authentication standard built on OAuth2, formalising the specification of the ID token, requests, etc. (Conceptually, it authorises access to a user-info service.)
+OpenID Connect is the authentication standard built on OAuth2. It defines an ID token, as well as a user-info service (which uses the access token for authorisation). 
