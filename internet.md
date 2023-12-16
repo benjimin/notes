@@ -44,6 +44,8 @@ Security
 
 ### Hashing
 
+A hash is a one-way condensation of an arbitrary length input into a short digest. (Similar to a checksum it is intended to be sensitive to plausible changes of the input, but a cryptographic hash must also make it difficult to engineer inputs that have collisions in output digest value.) Hash representations are commonly used as indexes by data repositories (git, docker, etc) where they serve a secondary function for integrity checking of the content. Authentication also tends to store hashed representations (of passwords each combined with random salts) so that a leak does not immediately expose passwords.
+
 Git uses SHA1, and is planning to migrate to SHA256. (Collision attacks have been demonstrated for SHA1, likewise MD5.)
 
 Ubuntu Linux presently defaults to SHA512 for system passwords.
