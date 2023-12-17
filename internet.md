@@ -42,23 +42,29 @@ The most common protocols used over IP are either UDP or TCP. Each of these has 
 Security
 --------
 
-### Hashing
+### Cryptography
 
-A hash is a one-way condensation of an arbitrary length input into a short digest. (Similar to a checksum it is intended to be sensitive to plausible changes of the input, but a cryptographic hash must also make it difficult to engineer inputs that have collisions in output digest value.) Hash representations are commonly used as indexes by data repositories (git, docker, etc) where they serve a secondary function for integrity checking of the content. Authentication also tends to store hashed representations (of passwords each combined with random salts) so that a leak does not immediately expose passwords.
+#### Hashing
 
-Git uses SHA1, and is planning to migrate to SHA256. (Collision attacks have been demonstrated for SHA1, likewise MD5.)
+A hash is a one-way condensation of an arbitrary length input into a short digest. (Similar to a checksum it is intended to be sensitive to plausible changes of the input, but a cryptographic hash must also make it difficult to engineer inputs that have collisions in output digest value.) Hash representations are commonly used as indexes by data repositories (git, docker, etc) where they serve a secondary function for integrity checking of the content. Authentication also tends to store hashed representations (of passwords each combined with a different random salt) so that any leaked hashes must each be cracked independently to expose the password.
 
-Ubuntu Linux presently defaults to SHA512 for system passwords.
+Git uses SHA1, and is ostensibly planning to migrate to SHA256. (Collision attacks have been demonstrated for SHA1, and likewise for the related MD5.) Ubuntu Linux presently defaults to SHA512 for system passwords. These algorithms center around sequences of bitwise operations (such as xor gates and circular shifts) that are iterated dozens of times to scramble the input. The plaintext is divided into fixed length chunks, and scrambling for each successive chunk is seeded using the output from the preceding chunk.
 
-### Symmetric encryption
+#### Symmetric encryption
 
 Symmetric encryption is used to password-protect files (such as private keys). 
 
-### Asymmetric encryption
+#### Asymmetric encryption
 
 Ed25519 appears to be the current recommended practice (uses elliptic curve). The key is quite short (only 256 bits for the public key).
 
 If instead using RSA, should use 4096 bits.
+
+#### Cracking
+
+The critical measure is how much money does it take to crack a password or key by brute force. Brute forcing is trivially parallelisable, compute time is a fungible commodity, so the security reduces to a question of resources not time. It is straightforward to benchmark the rate of attempts and extrapolate e.g. to various password complexities. An upper bound on the warranted complexity can be obtained from the value of the resource being protected (or the market value of the owning organisation), or the resources of the largest potential competition (e.g., the revenue of a foreign government over a plausible span of time), or an estimate of the cost to go around the cryptography (e.g., obtaining credentials via espionage or coercion).
+
+The caveat is that quantum technological advancements (or theoretical breakthroughs) are anticipated to break all cryptography, except one-time pads, in the foreseeable future, dramatically revising these prices downward thereafter.
 
 ### Certificates
 
@@ -68,7 +74,7 @@ Typically, the entire trust chain is sent at once, so that the client can immedi
 
 ### TLS (formerly SSL)
 
-Transport Layer Security 1.3 (successor of Secure Sockets Layer).
+Transport Layer Security 1.3 (successor of Secure Sockets Layer) underpins most secure communications, such as HTTPS.
 
 RFC8446
 
