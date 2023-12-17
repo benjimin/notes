@@ -64,7 +64,7 @@ If instead using RSA, should use 4096 bits.
 
 The critical measure is how much money does it take to crack a password or key by brute force. Brute forcing is trivially parallelisable, compute time is a fungible commodity, so the security reduces to a question of resources not time. It is straightforward to benchmark the rate of attempts and extrapolate e.g. to various password complexities. An upper bound on the warranted complexity can be obtained from the value of the resource being protected (or the market value of the owning organisation), or the resources of the largest potential competition (e.g., the revenue of a foreign government over a plausible span of time), or an estimate of the cost to go around the cryptography (e.g., obtaining credentials via espionage or coercion).
 
-The caveat is that quantum technological advancements (or theoretical breakthroughs) are anticipated to break all cryptography, except one-time pads, in the foreseeable future, dramatically revising these prices downward thereafter.
+The caveat is that quantum technological advancements (or to a lesser extent, mathematical breakthroughs) are anticipated to break all cryptography, except one-time pads, in the foreseeable future, dramatically revising these prices downward thereafter.
 
 ### Certificates
 
