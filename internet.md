@@ -20,8 +20,10 @@ Current examples:
 
 A repeater is generally used to transfer a physical signal between consecutive physical links, with amplification and typically re-modulation to counter not only attenuation but also dispersion and interference. (A hub was a repeater in star topology; by re-broadcasting multiple links it necessitates collision detection, limiting the channels to half duplex.)
 
-MAC addressing
---------------
+Networks
+--------
+
+### MAC addressing
 
 Network links can be bridged at a logical level, only retransmitting well-formed dataframes. This is performed in star topologies by a switch.
 
@@ -29,8 +31,7 @@ Each node is expected to have a unique MAC (media access control) address. The s
 
 High speed switches are likely to use specialised circuitry. (100Gbps implies receiving 64bits from each port in the period that a conventional 64-bit CPU core executes 1-2 instructions.)
 
-IP routing
-----------
+### IP routing
 
 The internet protocol enables separate switched networks to be connected in a hierarchical manner. IPv4 involves 32bit addresses which are divided into a prefix that is particular to the local switched network, and an extension that is peculiar to individual hosts within that subnet. Each host must be configured with its address, the prefix length (nowadays expressed with CIDR notation instead of netmask), and the address of a default gateway (a host on the local network that can relay message packets for addresses outside of the subnet). 
 
