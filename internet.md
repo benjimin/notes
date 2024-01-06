@@ -61,6 +61,10 @@ Ed25519 appears to be the current recommended practice (uses elliptic curve). Th
 
 If instead using RSA, should use 4096 bits.
 
+#### Signatures
+
+If two parties have a shared secret (a random value), then as a signature they can use the hash of the combination of the message and the key. To verify the signature, the other party generates their own signature for the message and then checks that both signatures match. This is the principle of the HMAC-SHA256 signing algorithm used for most JWTs (e.g. for OIDC) and is also the basis of the AWS SigV4 protocol (for using AWS credentials to authorise API requests).
+
 #### Cracking
 
 The critical measure is how much money does it take to crack a password or key by brute force. Brute forcing is trivially parallelisable, compute time is a fungible commodity, so the security reduces to a question of resources not time. It is straightforward to benchmark the rate of attempts and extrapolate e.g. to various password complexities. An upper bound on the warranted complexity can be obtained from the value of the resource being protected (or the market value of the owning organisation), or the resources of the largest potential competition (e.g., the revenue of a foreign government over a plausible span of time), or an estimate of the cost to go around the cryptography (e.g., obtaining credentials via espionage or coercion).
