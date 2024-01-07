@@ -27,7 +27,7 @@ Networks
 
 Network links can be bridged at a logical level, only retransmitting well-formed dataframes. This is performed in star topologies by a switch.
 
-Each node is expected to have a unique MAC (media access control) address. The switch tries to remember which MAC addresses are connected to each interface, to forward dataframes to the correct link. (Otherwise the dataframe will need be broadcast over all interfaces.) A switch may associate multiple MAC addresses to a single interface, for example if it connects to another switch (or similarly, to a host with multiple virtual machines). 
+Each node is expected to have a unique MAC (media access control) address. The switch tries to remember which MAC addresses are connected to each interface, to forward dataframes to the correct link. (Otherwise the dataframe will need be broadcast over all interfaces.) A switch may associate multiple MAC addresses to the same interface, for example if it leads to another switch (or similarly, to a host with multiple virtual machines). 
 
 High speed switches are likely to use specialised circuitry. (100Gbps implies receiving 64bits from each port in the period that a conventional 64-bit CPU core executes 1-2 instructions.)
 
